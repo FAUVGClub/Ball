@@ -1,17 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
 public class rotator : MonoBehaviour {
 
-   // private double value = Random.value;
+    public int Random_Multiplier;
 
-    private Vector3 direction = new Vector3 (5, 0, 5);
+    private Vector3 direction;
     private Vector3 offset1;
     private Vector3 offset2;
 
     private GameObject wall;
     private Vector3 center = new Vector3 (0, 0, 0);
+    
+
+    void Start()
+    {
+        direction = new Vector3(rand_d(), 0, rand_d());
+    }
 
     void Update () {
         
@@ -19,9 +24,12 @@ public class rotator : MonoBehaviour {
         transform.Rotate (new Vector3(15, 30, 45) * Time.deltaTime);
     }
 
+    float rand_d() {
+        float num = (Random.value + .1f) * Random_Multiplier;
+        return (num > .6 ? num : num * -1);
+    }
 
-    void OnTriggerEnter(Collider other)
-    {
+    void OnTriggerEnter(Collider other) {
         float x = direction.x;
         float z = direction.z;
 
