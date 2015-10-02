@@ -15,7 +15,7 @@ public class rotator : MonoBehaviour {
 
     void Start()
     {
-        direction = new Vector3(rand_d(), 0, rand_d());
+        direction = new Vector3(rand_d(), 0, rand_d());   
     }
 
     void Update () {
