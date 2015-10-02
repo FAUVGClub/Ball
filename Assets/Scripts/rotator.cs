@@ -25,8 +25,8 @@ public class rotator : MonoBehaviour {
     }
 
     float rand_d() {
-        float num = (Random.value + .1f) * Random_Multiplier;
-        return (num > .6 ? num : num * -1);
+        float num = Random.value ;
+        return (num > .5 ? num * Random_Multiplier : (num*-1) * Random_Multiplier);
     }
 
     void OnTriggerEnter(Collider other) {
