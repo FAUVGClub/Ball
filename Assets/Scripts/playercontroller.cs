@@ -12,6 +12,9 @@ public class playercontroller : MonoBehaviour {
     public Camera Main;
     public Camera Central;
 
+    public AudioSource ping;
+    public AudioSource clap;
+
     private float timecount;
     private Vector3 pickupposition = new Vector3 (0,.5f,0);
     private Vector3 ballposion = new Vector3(0, .5f, -4); private Rigidbody rb;
@@ -41,7 +44,9 @@ public class playercontroller : MonoBehaviour {
         count = 0;
         SetCountText();
         wintext.text = "";
-        timecount = 0;   
+        timecount = 0;
+
+        clap.Stop();  
 	}
 
     void Update() {
@@ -73,14 +78,19 @@ public class playercontroller : MonoBehaviour {
         if (other.gameObject.CompareTag("Pick Up"))
         {
             other.gameObject.SetActive(false);
+            ping.Play();
             count++;
             SetCountText();
         }
     }
 
-    void SetCountText () {
+    void SetCountText()
+    {
         countText.text = count.ToString();
         if (count > 12)
+        {
             wintext.text = "You Win!\n" + timecount.ToString("f2") + " s";
+            clap.Play();
+        }
     }
 }
