@@ -9,17 +9,39 @@ public class playercontroller : MonoBehaviour {
     public Text wintext;
     public Text TimeText;
 
-    private float timecount;
-    private Rigidbody rb;
-    private int count;
+    public Camera Main;
+    public Camera Central;
 
-	void Start () {
+    private float timecount;
+    private Vector3 pickupposition = new Vector3 (0,.5f,0);
+    private Vector3 ballposion = new Vector3(0, .5f, -4); private Rigidbody rb;
+    private int count;
+    private bool called = false;
+    private GameObject[] pickup;
+
+    void Start () {
+
+        if (!called)
+        {
+            pickup = GameObject.FindGameObjectsWithTag("Pick Up");
+            called = true;
+        }
+
+        foreach (GameObject item in pickup)
+        {
+            item.transform.position = pickupposition;
+            item.SetActive(true);
+        }
+
         rb = GetComponent<Rigidbody>();
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        transform.position = ballposion;
+
         count = 0;
         SetCountText();
         wintext.text = "";
         timecount = 0;   
-
 	}
 
     void Update() {
@@ -29,9 +51,10 @@ public class playercontroller : MonoBehaviour {
             TimeText.text = timecount.ToString("f2");
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-              Application.LoadLevel(0);
-            
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            Start();
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
