@@ -11,9 +11,14 @@ public class rotator : MonoBehaviour {
 
     private GameObject wall;
     private Vector3 center = new Vector3 (0, 0, 0);
-    
 
-    void Start()
+    float rand_d()
+    {
+        float num = Random.value;
+        return (num > .5 ? num * Random_Multiplier : (num * -1) * Random_Multiplier);
+    }
+
+    public void Start()
     {
         direction = new Vector3(rand_d(), 0, rand_d());   
     }
@@ -22,11 +27,6 @@ public class rotator : MonoBehaviour {
         
         transform.Translate(direction * Time.deltaTime, Space.World);
         transform.Rotate (new Vector3(15, 30, 45) * Time.deltaTime);
-    }
-
-    float rand_d() {
-        float num = Random.value ;
-        return (num > .5 ? num * Random_Multiplier : (num*-1) * Random_Multiplier);
     }
 
     void OnTriggerEnter(Collider other) {

@@ -22,5 +22,5 @@ desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initialized touch support.
 Platform assembly: C:\Users\Corsair\Documents\GitHub\Ball\Builds\ball_Data\Managed\System.dll (this message is harmless)
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1bcc -> priority: 1 
-  Thread -> id: 149c -> priority: 1 
+  Thread -> id: 710 -> priority: 1 
+  Thread -> id: e8 -> priority: 1 

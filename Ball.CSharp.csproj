@@ -72,7 +72,6 @@
     <Compile Include="Assets\Scripts\central_camera.cs" />
     <Compile Include="Assets\Scripts\playercontroller.cs" />
     <Compile Include="Assets\Scripts\rotator.cs" />
-    <Compile Include="Assets\Scripts\toggle.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
