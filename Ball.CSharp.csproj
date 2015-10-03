@@ -68,7 +68,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\cameracontroller.cs" />
     <Compile Include="Assets\Scripts\central_camera.cs" />
     <Compile Include="Assets\Scripts\playercontroller.cs" />
