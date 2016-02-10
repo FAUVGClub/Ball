@@ -9,6 +9,8 @@ public class playercontroller : MonoBehaviour {
     public Text wintext;
     public Text TimeText;
 
+    rotator rotator;
+
     public Camera Main;
     public Camera Central;
 
@@ -17,10 +19,12 @@ public class playercontroller : MonoBehaviour {
 
     private float timecount;
     private Vector3 pickupposition = new Vector3 (0,.5f,0);
-    private Vector3 ballposion = new Vector3(0, .5f, -4); private Rigidbody rb;
+    private Vector3 ballposion = new Vector3(0, .5f, -4);
+    private Rigidbody rb;
     private int count;
     private bool called = false;
     private GameObject[] pickup;
+
 
     void Start () {
 
@@ -32,8 +36,8 @@ public class playercontroller : MonoBehaviour {
 
         foreach (GameObject item in pickup)
         {
-            item.transform.position = pickupposition;
             item.SetActive(true);
+            item.transform.position = pickupposition;
         }
 
         rb = GetComponent<Rigidbody>();

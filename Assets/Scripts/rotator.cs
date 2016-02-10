@@ -12,15 +12,16 @@ public class rotator : MonoBehaviour {
     private GameObject wall;
     private Vector3 center = new Vector3 (0, 0, 0);
 
+
     float rand_d()
     {
         float num = Random.value;
         return (num > .5 ? num * Random_Multiplier : (num * -1) * Random_Multiplier);
     }
 
-    public void Start()
+    void Start()
     {
-        direction = new Vector3(rand_d(), 0, rand_d());   
+        direction = new Vector3(rand_d(), 0, rand_d());
     }
 
     void Update () {
