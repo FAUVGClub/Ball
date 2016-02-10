@@ -1,0 +1,4 @@
+sceneSetups:
+- path: C:/Users/Corsair/Documents/GitHub/BoxGame/BoxGame/Assets/scene0.unity
+  isLoaded: 1
+  isActive: 1
